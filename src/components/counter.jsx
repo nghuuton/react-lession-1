@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-
+import classNames from 'classnames'
 class Counter extends Component {
     state = {
         count: 0,
+        tags: ['tag1', 'tag2', 'tag3']
     };
     formatCount() {
         const { count } = this.state;
@@ -18,10 +19,23 @@ class Counter extends Component {
 
 
     render() {
+        const { count, tags } = this.state;
         return (
             <div className="counter">
-                <span className="badge badge-primary mr-2">{this.formatCount()}</span>
-                <button className="btn btn-secondary primary btn-sm" onClick={() => this.increment()}>Increment</button>
+                <span
+                    className={classNames('badge badge-primary mr-2', { 'badge-warning': count === 0 })}>
+                    {this.formatCount()}
+                </span>
+                <button
+                    className="btn btn-secondary primary btn-sm"
+                    onClick={() => this.increment()}>
+                    Increment
+                </button>
+                <ul>
+                    {tags.length > 0 && tags.map((item, index) => <li key={index}>{item}</li>)}
+                    {tags.length === 0 && <li>Nothing in here!</li>}
+                </ul>
+
             </div>
         );
     }
