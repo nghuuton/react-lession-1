@@ -1,2 +1,6 @@
 {
+  "editor.fontFamily": "Fira Code Retina, monospace",
+  "terminal.integrated.fontFamily": "Fira Code Retina, monospace",
+  "debug.console.fontFamily": "Fira Code Retina, monospace",
+  "editor.fontLigatures": true
 }
