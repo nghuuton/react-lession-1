@@ -13,22 +13,56 @@ class Counters extends Component {
       ],
     };
     this.handleDelete = this.handleDelete.bind(this);
+    // this.increment = this.increment.bind(this);
+    // this.removeValue = this.removeValue.bind(this);
   }
 
   handleDelete(counterId) {
-    console.log(counterId);
+    const counters = this.state.counters.filter((c) => c.id !== counterId);
+    this.setState({ counters });
   }
+
+  // increment(counter, value) {
+  //   const { counters } = this.state;
+  //   const index = counters.indexOf(counter);
+  //   this.setState({
+  //     counters: [
+  //       ...counters.slice(0, index),
+  //       {
+  //         ...counter,
+  //         value: counter.value + value,
+  //       },
+  //       ...counters.slice(index + 1),
+  //     ],
+  //   });
+  // }
+
+  // removeValue(counter) {
+  //   const { counters } = this.state;
+  //   const index = counters.indexOf(counter);
+  //   this.setState({
+  //     counters: [
+  //       ...counters.slice(0, index),
+  //       {
+  //         ...counter,
+  //         value: 0,
+  //       },
+  //       ...counters.slice(index + 1),
+  //     ],
+  //   });
+  // }
 
   render() {
     const { counters } = this.state;
     return (
       <div>
-        {counters.map((count) => (
+        {counters.map((counter) => (
           <Counter
+            // increment={this.increment}
             deleteCounter={this.handleDelete}
-            key={count.id}
-            value={count.value}
-            id={count.id}
+            // removeValue={this.removeValue}
+            counter={counter}
+            key={counter.id}
           >
             {/* <h1>Counter #{counters.id}</h1> */}
           </Counter>
