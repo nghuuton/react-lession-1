@@ -2,29 +2,31 @@ import React, { Component } from "react";
 import classNames from "classnames";
 class Counter extends Component {
   state = {
-    count: 0,
-    tags: ["tag1", "tag2", "tag3"],
+    value: this.props.value,
+    // tags: ["tag1", "tag2", "tag3"],
   };
   formatCount() {
-    const { count } = this.state;
-    return count === 0 ? "Zero" : count;
+    const { value } = this.state;
+    return value === 0 ? "Zero" : value;
   }
 
   increment(productId) {
     return () => {
       this.setState({
-        count: this.state.count + productId,
+        count: this.state.value + productId,
       });
     };
   }
 
   render() {
-    const { count, tags } = this.state;
+    const { value /*tags*/ } = this.state;
+    const { children } = this.props;
     return (
       <div className="counter">
+        {children}
         <span
           className={classNames("badge badge-primary mr-2", {
-            "badge-warning": count === 0,
+            "badge-warning": value === 0,
           })}
         >
           {this.formatCount()}
@@ -35,11 +37,11 @@ class Counter extends Component {
         >
           Increment
         </button>
-        <ul>
+        {/* <ul>
           {tags.length > 0 &&
             tags.map((item, index) => <li key={index}>{item}</li>)}
           {tags.length === 0 && <li>Nothing in here!</li>}
-        </ul>
+        </ul> */}
       </div>
     );
   }

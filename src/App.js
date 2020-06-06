@@ -1,30 +1,31 @@
 import React, { Component } from "react";
 // import "./App.css";
-import { getMovies } from "./services/fakeMovieService";
+// import { getMovies } from "./services/fakeMovieService";
 // import Counter from './components/counter'
-
+import Counters from "./components/counters";
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      movies: getMovies(),
-      count: getMovies().length,
-    };
-  }
-  deleteMovie = (movieId) => {
-    const movies = this.state.movies.filter((movie) => movie._id !== movieId);
-    this.setState({
-      movies: movies,
-      count: this.state.count - 1,
-    });
-  };
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     movies: getMovies(),
+  //     count: getMovies().length,
+  //   };
+  // }
+  // deleteMovie = (movieId) => {
+  //   const movies = this.state.movies.filter((movie) => movie._id !== movieId);
+  //   this.setState({
+  //     movies: movies,
+  //     count: this.state.count - 1,
+  //   });
+  // };
   render() {
-    const { movies, count } = this.state;
-    if (count === 0) return <span>There are no movies in the databases.</span>;
+    // const { movies, count } = this.state;
+    // if (count === 0) return <span>There are no movies in the databases.</span>;
     return (
       <React.Fragment>
-        <div className="contrainer">
-          {/* <Counter /> */}
+        <Counters />
+        {/* <Counter /> */}
+        {/* <div className="contrainer">
           <p>Showing {count} movies in the databases.</p>
           <div className="row">
             <div className="col">
@@ -59,7 +60,7 @@ class App extends Component {
               </table>
             </div>
           </div>
-        </div>
+        </div> */}
       </React.Fragment>
     );
   }
