@@ -19,7 +19,7 @@ class Counters extends Component {
       <div>
         {counters.map((count) => (
           <Counter key={count.id} value={count.value} id={counters.id}>
-            <h1>Counter #{counters.id}</h1>
+            {/* <h1>Counter #{counters.id}</h1> */}
           </Counter>
         ))}
       </div>

@@ -20,10 +20,10 @@ class Counter extends Component {
 
   render() {
     const { value /*tags*/ } = this.state;
-    const { children } = this.props;
+    // const { children } = this.props;
     return (
       <div className="counter">
-        {children}
+        {/* {children} */}
         <span
           className={classNames("badge badge-primary mr-2", {
             "badge-warning": value === 0,
