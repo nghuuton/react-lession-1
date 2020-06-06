@@ -13,7 +13,7 @@ class Counter extends Component {
   increment(productId) {
     return () => {
       this.setState({
-        count: this.state.value + productId,
+        value: this.state.value + productId,
       });
     };
   }
@@ -36,6 +36,12 @@ class Counter extends Component {
           onClick={this.increment(1)}
         >
           Increment
+        </button>
+        <button
+          onClick={() => this.props.delete(this.props.id)}
+          className="btn btn-danger btn-sm m-1"
+        >
+          Delete
         </button>
         {/* <ul>
           {tags.length > 0 &&
