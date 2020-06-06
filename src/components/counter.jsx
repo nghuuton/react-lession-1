@@ -18,9 +18,16 @@ class Counter extends Component {
     };
   }
 
+  // ListenEventDelete(id) {
+  //   return () => {
+  //     this.props.deleteCounter(id);
+  //   };
+  // }
+
   render() {
     const { value /*tags*/ } = this.state;
     // const { children } = this.props;
+    const { deleteCounter, id } = this.props;
     return (
       <div className="counter">
         {/* {children} */}
@@ -38,7 +45,7 @@ class Counter extends Component {
           Increment
         </button>
         <button
-          onClick={() => this.props.delete(this.props.id)}
+          onClick={() => deleteCounter(id)}
           className="btn btn-danger btn-sm m-1"
         >
           Delete
