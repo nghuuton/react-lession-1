@@ -15,12 +15,15 @@ class App extends Component {
         { id: 4, value: 0 },
       ],
     };
+    console.log("App - Constructor");
     this.handleDelete = this.handleDelete.bind(this);
     this.increment = this.increment.bind(this);
     this.removeValue = this.removeValue.bind(this);
     this.reset = this.reset.bind(this);
   }
-
+  componentDidMount() {
+    console.log("App - Mount");
+  }
   handleDelete(counterId) {
     const counters = this.state.counters.filter((c) => c.id !== counterId);
     this.setState({ counters });
@@ -96,6 +99,7 @@ class App extends Component {
   //   });
   // };
   render() {
+    console.log("App - Render");
     // const { movies, count } = this.state;
     // if (count === 0) return <span>There are no movies in the databases.</span>;
     const { counters } = this.state;

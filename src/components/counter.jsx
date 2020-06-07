@@ -35,6 +35,7 @@ class Counter extends Component {
   // }
 
   render() {
+    console.log("Counter Render");
     // const { value /*tags*/ } = this.props.counter.value;
     // const { children } = this.props;
     const { deleteCounter, counter, increment, removeValue } = this.props;
